@@ -1,0 +1,29 @@
+{
+  "presets": [
+    "react",
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": "last 2 versions"
+        },
+        "loose": true,
+        "modules": false
+      }
+    ]
+  ],
+  "plugins": [
+    "transform-decorators-legacy",
+    "transform-class-properties",
+    "transform-flow-strip-types",
+    "transform-es2015-modules-commonjs",
+    "inline-react-svg",
+    "inline-dotenv",
+    ["styled-components", { "ssr": true, "displayName": true, "preprocess": false }]
+  ],
+  "env": {
+    "test": {},
+    "development": {},
+    "production": {}
+  }
+}
