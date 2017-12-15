@@ -8,10 +8,10 @@
 * Mobx 3
 * Express 4
 * React Router 4
-* React Helmet
+* React Helmet (server side rendering)
+* Styled Components (server side rendering)
 * flow
 * jest
-*...
 
 
 #### This app is build for connect with the wordpress api rest
