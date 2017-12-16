@@ -20,7 +20,7 @@ import fetchData from './src/server/fetchData';
 import template from './src/server/template';
 import RootStore from './src/stores/RootStore';
 
-const store = new RootStore({});
+const store = new RootStore();
 
 const DIST_DIR = 'dist';
 const DEFAULT_PORT = process.env.POST || 4000;

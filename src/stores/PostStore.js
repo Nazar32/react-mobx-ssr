@@ -21,6 +21,7 @@ class PostStore {
   }
 
   syncPosts(): Array<PostType> | Promise<any> {
+    this.rootStore.headStore.title = 'List post';
     return axios(`${this.rootStore.domainStore.path}wp/v2/posts`)
       .then(res => {
         this.total = res.headers ? res.headers['x-wp-total'] : 0;
@@ -56,9 +57,11 @@ class PostStore {
       const post = this.findPostInPosts(slug);
       if (post) {
         this.post = post;
+        if (this.post) this.rootStore.headStore.title = this.post.title.rendered;
         return resolve();
       }
       await this.syncPost(slug);
+      if (this.post) this.rootStore.headStore.title = this.post.title.rendered;
       return resolve();
     });
   }

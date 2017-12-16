@@ -19,10 +19,7 @@
     "webpack-defaults": "webpack-defaults"
   },
   "lint-staged": {
-    "*.{js,json}": [
-      "npm run format",
-      "git add"
-    ]
+    "*.{js,json}": ["npm run format", "git add"]
   },
   "author": "faramaz patrick",
   "license": "ISC",

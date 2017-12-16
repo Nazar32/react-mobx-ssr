@@ -13,27 +13,6 @@ declare var process: {
   },
 };
 
-// export type EventElement = {
-//   id: string,
-//   name: { text: string, html: string },
-//   description: { text: string, html: string },
-//   start: { local: string },
-// };
-
-// export type Store = {
-//   events: Array<EventElement>,
-//   event: EventElement | void,
-//   page: number,
-//   total: number,
-//   numberOfPage: number,
-//   elemByPage: number,
-//   // getTotal: void,
-//   getNumberOfPage: void,
-//   loadEvent(id: string): EventElement | Promise<any>,
-//   loadEvents(location?: string): Array<EventElement> | Promise<any>,
-//   findEvent(id: string): EventElement | Promise<any>,
-// };
-
 export type RootStoreType = {
   postStore: PostStoreType, // eslint-disable-line
   headStore: HeadStoreType, // eslint-disable-line
