@@ -8,6 +8,7 @@
 <PROJECT_ROOT>/package.json
 .*/node_modules/styled-components/.*
 .*/node_modules/stylelint/.*
+.*/node_modules/vue/.*
 [include]
 <PROJECT_ROOT>/src/*
 <PROJECT_ROOT>/flow-typed/types.js
