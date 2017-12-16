@@ -10,18 +10,18 @@ const routes = [
       {
         path: '/',
         exact: true,
-        component: Home,
+        component: Home
       },
       {
         path: '/post/:slug',
-        component: Detail,
+        component: Detail
       },
       {
         path: '*',
-        component: NotFound,
-      },
-    ],
-  },
+        component: NotFound
+      }
+    ]
+  }
 ];
 
 export default routes;

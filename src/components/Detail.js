@@ -2,15 +2,13 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
 
-@inject('postStore')
-@observer
 export class Detail extends Component<{
   postStore: PostStoreType,
   match: {
     params: {
-      slug: string,
-    },
-  },
+      slug: string
+    }
+  }
 }> {
   static fetchData(store: RootStoreType, params: Object) {
     const slug = params.slug;
@@ -50,4 +48,4 @@ export class Detail extends Component<{
   }
 }
 
-export default Detail;
+export default inject('postStore')(observer(Detail));

@@ -25,7 +25,7 @@ export default (req, store, context = {}) => {
             <Container>{renderRoutes(routes)}</Container>
           </Provider>
         </StaticRouter>
-      </StyleSheetManager>,
+      </StyleSheetManager>
     );
     // init inject global
     reset();
@@ -40,7 +40,7 @@ export default (req, store, context = {}) => {
       app,
       helmet,
       styles,
-      initialState,
+      initialState
     };
   } catch (e) {
     throw e;
