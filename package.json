@@ -1,7 +1,7 @@
 {
-  "name": "eventbrite-app",
+  "name": "react-mobx-ssr",
   "version": "0.0.1",
-  "description": "App for display eventbrite event",
+  "description": "App for display wordpress post",
   "main": "index.js",
   "scripts": {
     "build": "npm run webpack -- --env.env=prod",
