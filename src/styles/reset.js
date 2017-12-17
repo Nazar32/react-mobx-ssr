@@ -103,4 +103,15 @@ hr {
 input, select {
     vertical-align:middle;
 }
+
+/****** transition route ******/
+
+.route-appear {
+  opacity: 0.01;
+}
+
+.route-appear.route-appear-active {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}
 `;

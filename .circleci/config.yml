@@ -1,0 +1,9 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: node:latest
+    workDir: ~/react-mobx-ssr
+    steps:
+      - run: npm install
+      - run: npm run test
