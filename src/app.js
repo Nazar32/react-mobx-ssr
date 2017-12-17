@@ -27,7 +27,7 @@ ReactDOM.hydrate(
       </ThemeProvider>
     </Provider>
   </BrowserRouter>,
-  document.getElementById('app'),
+  document.getElementById('app')
 );
 
 if (module.hot) {

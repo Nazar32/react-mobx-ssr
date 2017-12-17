@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/ipatate/react-mobx-ssr.svg?style=svg)](https://circleci.com/gh/ipatate/react-mobx-ssr)
+
 # React App Server Side Rendering
 
 # in progress

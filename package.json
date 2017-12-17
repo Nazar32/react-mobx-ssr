@@ -1,7 +1,7 @@
 {
-  "name": "eventbrite-app",
+  "name": "react-mobx-ssr",
   "version": "0.0.1",
-  "description": "App for display eventbrite event",
+  "description": "App for display wordpress post",
   "main": "index.js",
   "scripts": {
     "build": "npm run webpack -- --env.env=prod",
@@ -11,12 +11,14 @@
     "format": "prettier --write --single-quote --print-width=120 --tab-width=2 \"src/**/*.{js,jsx}\" ",
     "clean": "rm -rf web/dist/",
     "test": "NODE_ENV=test node_modules/.bin/jest",
-    "lint": "eslint src/**/*.{js,jsx} --quiet",
+    "lint": "node_modules/.bin/eslint src/**/*.{js,jsx} --quiet",
     "flow": "node_modules/.bin/flow",
     "init": "npm i && flow-typed install",
     "webpack": "node_modules/.bin/webpack",
     "precommit": "lint-staged",
-    "webpack-defaults": "webpack-defaults"
+    "webpack-defaults": "webpack-defaults",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "lint-staged": {
     "*.{js,json}": ["npm run format", "git add"]
@@ -43,9 +45,13 @@
     "react-router-config": "^1.0.0-beta.4",
     "react-router-dom": "^4.2.2",
     "react-router-scroll-memory": "^1.0.1",
+    "react-transition-group": "1.2.1",
     "styled-components": "^2.2.4"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^3.2.17",
+    "@storybook/addon-links": "^3.2.17",
+    "@storybook/react": "^3.2.17",
     "babel-eslint": "^7.2.3",
     "babel-jest": "^20.0.3",
     "babel-loader": "^7.1.1",
@@ -82,6 +88,7 @@
     "preload-webpack-plugin": "^2.0.0",
     "prettier": "^1.9.2",
     "script-ext-html-webpack-plugin": "^1.8.8",
+    "storybook-router": "^0.3.2",
     "webpack": "^3.10.0",
     "webpack-bundle-analyzer": "^2.9.1",
     "webpack-dev-middleware": "^1.12.2",

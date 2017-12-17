@@ -2,6 +2,7 @@ import Main from '../components/Main';
 import Home from '../components/Home';
 import Detail from '../components/Detail';
 import NotFound from '../components/NotFound';
+import PageShell from '../components/PageShell';
 
 const routes = [
   {
@@ -10,18 +11,18 @@ const routes = [
       {
         path: '/',
         exact: true,
-        component: Home,
+        component: PageShell(Home)
       },
       {
         path: '/post/:slug',
-        component: Detail,
+        component: PageShell(Detail)
       },
       {
         path: '*',
-        component: NotFound,
-      },
-    ],
-  },
+        component: PageShell(NotFound)
+      }
+    ]
+  }
 ];
 
 export default routes;
