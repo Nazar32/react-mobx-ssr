@@ -9,6 +9,7 @@
 .*/node_modules/styled-components/.*
 .*/node_modules/stylelint/.*
 .*/node_modules/vue/.*
+.*/node_modules/mrm-core/.*
 [include]
 <PROJECT_ROOT>/src/*
 <PROJECT_ROOT>/flow-typed/types.js
