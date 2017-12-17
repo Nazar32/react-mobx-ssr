@@ -11,7 +11,7 @@
     "format": "prettier --write --single-quote --print-width=120 --tab-width=2 \"src/**/*.{js,jsx}\" ",
     "clean": "rm -rf web/dist/",
     "test": "NODE_ENV=test node_modules/.bin/jest",
-    "lint": "eslint src/**/*.{js,jsx} --quiet",
+    "lint": "node_modules/.bin/eslint src/**/*.{js,jsx} --quiet",
     "flow": "node_modules/.bin/flow",
     "init": "npm i && flow-typed install",
     "webpack": "node_modules/.bin/webpack",
