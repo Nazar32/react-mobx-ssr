@@ -1,10 +1,13 @@
+// @flow
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
 import { Link } from 'react-router-dom';
 
 import { Title, Body, Container, Button } from '../styles/post';
 
-export class List extends Component {
+export class List extends Component<{
+  postStore: PostStoreType
+}> {
   componentDidMount() {
     if (this.props.postStore.total === 0) {
       this.props.postStore.syncPosts();

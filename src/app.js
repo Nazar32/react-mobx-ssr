@@ -1,3 +1,4 @@
+// @flow
 import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -16,6 +17,7 @@ const state = window.__INITIAL_STATE__; // eslint-disable-line
 const store = new RootStore(state);
 
 reset();
+// $FlowFixMe
 ReactDOM.hydrate(
   <BrowserRouter>
     <Provider {...store}>
