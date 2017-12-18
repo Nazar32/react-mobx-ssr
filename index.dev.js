@@ -30,24 +30,6 @@ const _config = config();
 const compiler = webpack(_config);
 const memFs = (compiler.outputFileSystem = new MemoryFileSystem());
 
-function logErrors(err, req, res, next) {
-  console.error(err.stack);
-  next(err);
-}
-function clientErrorHandler(err, req, res, next) {
-  if (req.xhr) {
-    res.status(500).send({ error: 'Something failed!' });
-  } else {
-    next(err);
-  }
-}
-function errorHandler(err, req, res, next) {
-  res.status(500);
-  res.set('content-type', 'text/html');
-  res.send(`<p>${err}</p>`);
-  res.end();
-}
-
 const app = express();
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -58,9 +40,7 @@ app.use(
     publicPath: _config.output.publicPath
   })
 );
-app.use(logErrors);
-app.use(clientErrorHandler);
-app.use(errorHandler);
+
 app.use(webpackHotMiddleware(compiler));
 
 app.get('/*', (req, res, next) => {
