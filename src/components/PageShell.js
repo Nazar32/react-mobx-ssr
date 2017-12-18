@@ -1,30 +1,33 @@
+// @flow
 import React from 'react';
+import type { ComponentType } from 'react';
 import { CSSTransitionGroup } from 'react-transition-group';
 
-const PageShell = Page =>
-  class Shell extends React.Component {
-    // call fetch data from page element
-    static fetchData(...props) {
-      if (Page.fetchData) {
-        return Page.fetchData(...props);
-      }
-      return Promise.resolve();
+interface StaticInterface {
+  fetchData(any): Promise<any>;
+}
+
+function PageShell(Page: Class<any & StaticInterface>): ComponentType<any> {
+  const Shell = (props: any) => (
+    <CSSTransitionGroup
+      transitionName="route"
+      transitionAppear
+      transitionAppearTimeout={500}
+      transitionEnter={false}
+      transitionLeave={false}
+      component="div"
+      className="page"
+    >
+      <Page {...props} />
+    </CSSTransitionGroup>
+  );
+  Shell.fetchData = (...props) => {
+    if (Page.fetchData) {
+      return Page.fetchData(...props);
     }
-    render() {
-      return (
-        <CSSTransitionGroup
-          transitionName="route"
-          transitionAppear
-          transitionAppearTimeout={500}
-          transitionEnter={false}
-          transitionLeave={false}
-          component="div"
-          className="page"
-        >
-          <Page {...this.props} />
-        </CSSTransitionGroup>
-      );
-    }
+    return Promise.resolve();
   };
+  return Shell;
+}
 
 export default PageShell;

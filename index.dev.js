@@ -37,9 +37,10 @@ app.set('port', process.env.PORT || DEFAULT_PORT);
 app.use(express.static(path.join(__dirname, DIST_DIR)));
 app.use(
   webpackDevMiddleware(compiler, {
-    publicPath: _config.output.publicPath,
-  }),
+    publicPath: _config.output.publicPath
+  })
 );
+
 app.use(webpackHotMiddleware(compiler));
 
 app.get('/*', (req, res, next) => {
