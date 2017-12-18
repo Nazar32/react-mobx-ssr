@@ -6,7 +6,6 @@
 <PROJECT_ROOT>/node_modules/babel-plugin-flow-react-proptypes/*.
 <PROJECT_ROOT>/package-lock.json
 <PROJECT_ROOT>/package.json
-.*/node_modules/styled-components/.*
 .*/node_modules/stylelint/.*
 .*/node_modules/vue/.*
 .*/node_modules/mrm-core/.*
